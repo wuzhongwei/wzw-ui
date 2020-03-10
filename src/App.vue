@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <wzw-button>按钮</wzw-button>
+
+    <wzw-button type="warning">警告</wzw-button>
+    <wzw-button type="danger">危险</wzw-button>
+    <wzw-button type="success">成功</wzw-button>
+    <wzw-button type="primary">按钮</wzw-button>
+    <wzw-button type="info">信息</wzw-button>
+
+    <wzw-button type="info" icon="wode">信息</wzw-button>
+    <wzw-button type="primary" icon="diqu" iconPosition="right">信息</wzw-button>
+    <wzw-icon icon="wode"></wzw-icon>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>

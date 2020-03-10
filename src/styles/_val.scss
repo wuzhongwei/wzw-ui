@@ -1,0 +1,26 @@
+$border-radius: 4px;
+
+$primary: #409EFF;
+$success: #67c23a;
+$warning: #e6a23c;
+$danger: #f56c6c;
+$info: #909399;
+
+$primary-hover: #66b1ff;
+$success-hover: #85ce61;
+$warning-hover: #ebb563;
+$danger-hover: #f78989;
+$info-hover: #a6a9ad;
+
+$primary-active: #3a8ee6;
+$success-active: #5daf34;
+$warning-active: #cf9236;
+$danger-active: #dd6161;
+$info-active: #82848a;
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
