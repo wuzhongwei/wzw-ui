@@ -41,7 +41,7 @@ export default {
       if (this.type) {
         classes.push(`${name}-${this.type}`)
       }
-      if (this.iconPosition) {
+      if (this.icon) {
         classes.push(`${name}-icon-${this.iconPosition}`)
       }
       return classes
@@ -52,16 +52,16 @@ export default {
 <style lang="scss">
 @import '../styles/_val.scss';
 $height: 42px;
-$font-size: 16px;
+$font-size: 14px;
 $color: #606266;
 $border-color: #dcdfe6;
-$background: #ecf5ff;
+$background: #fff;
 $active-color: #3a8ee6;
+$border-radius: 20px;
 
 .wzw-button {
   border-radius: $border-radius;
   border: 1px solid $border-color;
-  height: $height;
   line-height: 1;
   font-size: $font-size;
   cursor: pointer;
@@ -70,18 +70,19 @@ $active-color: #3a8ee6;
   justify-content: center;
   vertical-align: middle;
   user-select: none;
-  &:hover {
-    border-color: $border-color;
-    background-color: $background;
+  background-color: #fff;
+  color: $color;
+  outline: none;
+  -webkit-appearance: none;
+  transition: .1s;
+  &:hover, &:focus {
+    border-color: $primary-light-7;
+    background-color: $primary-light-9;
+    color: $primary;
   }
-  &:focus, &:active {
+  &:active {
     color: $active-color;
-    border-color: 1px solid $active-color;
-    background-color: $background;
-    outline: none;
-  }
-  &-warning {
-    background: $warning;
+    border-color: $active-color;
   }
   @each $key, $val in (primary: $primary, warning: $warning, success: $success, info: $info, danger: $danger) {
     &-#{$key} {
@@ -92,14 +93,14 @@ $active-color: #3a8ee6;
     }
   }
   @each $key, $val in (primary: $primary-hover, warning: $warning-hover, success: $success-hover, info: $info-hover, danger: $danger-hover) {
-    &-#{$key}:hover {
+    &-#{$key}:hover, &-#{$key}:focus {
       background-color: #{$val};
       border: 1px solid #{$val};
       color: #fff;
     }
   }
   @each $key, $val in (primary: $primary-active, warning: $warning-active, success: $success-active, info: $info-active, danger: $danger-active) {
-    &-#{$key}:active,&-#{$key}:focus {
+    &-#{$key}:active {
       background-color: #{$val};
       border: 1px solid #{$val};
       color: #fff;
@@ -125,7 +126,7 @@ $active-color: #3a8ee6;
       order: 2;
       margin-left: 4px;
     }
-   .icon + span {
+    .icon + span {
       order: 1;
       margin-left: 0;
     }
