@@ -1,6 +1,7 @@
 <template>
-  <button :class="btnClass">
-    <wzw-icon :icon="icon" v-if="icon" class="icon"></wzw-icon>
+  <button :class="btnClass" :disabled="loading" @click="$emit('click', $event)">
+    <wzw-icon :icon="icon" v-if="icon && !loading" class="icon"></wzw-icon>
+    <wzw-icon icon="loding" v-if="loading" class="icon"></wzw-icon>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
@@ -20,6 +21,10 @@ export default {
         }
         return true
       }
+    },
+    loading: {
+      type: Boolean,
+      default: false
     },
     icon: {
       type: String
@@ -129,6 +134,20 @@ $border-radius: 20px;
     .icon + span {
       order: 1;
       margin-left: 0;
+    }
+  }
+  &[disabled] {
+    pointer-events: none;
+    position: relative;
+    &:before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      background-color: hsla(0,0%,100%,.35);
     }
   }
 }
