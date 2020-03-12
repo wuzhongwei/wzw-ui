@@ -19,6 +19,12 @@ $warning-active: #cf9236;
 $danger-active: #dd6161;
 $info-active: #82848a;
 
+$primary-disabled: #a0cfff;
+$success-disabled: #b3e19d;
+$warning-disabled: #f3d19e;
+$danger-disabled: #fab6b6;
+$info-disabled: #c8c9cc;
+
 $primary-light-1: mix($white, $primary, 10%); /* 53a8ff */
 $primary-light-2: mix($white, $primary, 20%); /* 66b1ff */
 $primary-light-3: mix($white, $primary, 30%); /* 79bbff */
@@ -28,6 +34,15 @@ $primary-light-6: mix($white, $primary, 60%); /* b3d8ff */
 $primary-light-7: mix($white, $primary, 70%); /* c6e2ff */
 $primary-light-8: mix($white, $primary, 80%); /* d9ecff */
 $primary-light-9: mix($white, $primary, 90%); /* ecf5ff */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
 
 * {
   padding: 0;

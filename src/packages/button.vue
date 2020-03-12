@@ -1,12 +1,12 @@
 <template>
-  <button :class="btnClass" :disabled="loading" @click="$emit('click', $event)">
-    <wzw-icon :icon="icon" v-if="icon && !loading" class="icon"></wzw-icon>
-    <wzw-icon icon="loding" v-if="loading" class="icon"></wzw-icon>
+  <button :class="btnClass" :disabled="disabled" @click="$emit('click', $event)">
+    <wzw-icon :icon="icon" v-if="icon && !loading"></wzw-icon>
+    <wzw-icon icon="loding" v-if="loading" class="icon wzw-pulse"></wzw-icon>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
 <script>
-const typeList = ['warning', 'danger', 'info', 'primary', 'success']
+const typeList = ['warning', 'danger', 'info', 'primary', 'success', 'text']
 const iconPosition = ['left', 'right']
 const name = 'wzw-button'
 export default {
@@ -22,12 +22,24 @@ export default {
         return true
       }
     },
+    icon: {
+      type: String
+    },
     loading: {
       type: Boolean,
       default: false
     },
-    icon: {
-      type: String
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    round: {
+      type: Boolean,
+      default: false
+    },
+    circle: {
+      type: Boolean,
+      default: false
     },
     iconPosition: {
       type: String,
@@ -49,6 +61,18 @@ export default {
       if (this.icon) {
         classes.push(`${name}-icon-${this.iconPosition}`)
       }
+      if (this.round) {
+        classes.push(`is-round`)
+      }
+      if (this.circle) {
+        classes.push(`is-circle`)
+      }
+      if (this.disabled) {
+        classes.push(`is-disabled`)
+      }
+      if (this.loading) {
+        classes.push(`is-loading`)
+      }
       return classes
     }
   }
@@ -62,7 +86,7 @@ $color: #606266;
 $border-color: #dcdfe6;
 $background: #fff;
 $active-color: #3a8ee6;
-$border-radius: 20px;
+$button-border-radius: 20px;
 
 .wzw-button {
   border-radius: $border-radius;
@@ -89,8 +113,30 @@ $border-radius: 20px;
     color: $active-color;
     border-color: $active-color;
   }
+  &.is-disabled, &.is-disabled:hover {
+    color: #c0c4cc;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #fff;
+    border-color: #ebeef5;
+  }
+  &-text {
+    border-color: transparent;
+    color: $primary;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &-text:hover, &-text:focus {
+    color: $primary;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  &-text.is-disabled,&-text.is-disabled:hover {
+    border-color: transparent;
+  }
   @each $key, $val in (primary: $primary, warning: $warning, success: $success, info: $info, danger: $danger) {
-    &-#{$key} {
+   &-#{$key}{
       background-color: #{$val};
       border: 1px solid #{$val};
       color: #fff;
@@ -111,32 +157,44 @@ $border-radius: 20px;
       color: #fff;
     }
   }
-  .icon {
-    width: 16px;
-    height: 16px;
-    &+span {
-      margin-left: 4px;
+  @each $key, $val in (primary: $primary-disabled, warning: $warning-disabled, success: $success-disabled, info: $info-disabled, danger: $danger-disabled) {
+   &-#{$key}.is-disabled{
+      background-color: #{$val};
+      border: 1px solid #{$val};
+      color: #fff;
+      fill: #fff;
     }
   }
+  // .icon {
+  //   & + span {
+  //     margin-left: 4px;
+  //   }
+  // }
+  // &-icon-left {
+  //   svg {
+  //     order: 1
+  //   }
+  //   span {
+  //     order: 2
+  //   }
+  // }
   &-icon-left {
-    svg {
-      order: 1
-    }
-    span {
-      order: 2
-    }
+     
   }
   &-icon-right {
-    svg {
-      order: 2;
-      margin-left: 4px;
-    }
-    .icon + span {
-      order: 1;
-      margin-left: 0;
-    }
+    // i[class^=wzw-icon] {
+    //   margin-left: 10px;
+    // }
+   i[class~=wzw-icon] {
+     order: 2;
+     margin-left: 5px;
+   }
+  //   .icon + span {
+  //     order: 1;
+  //     margin-left: 0;
+  //   }
   }
-  &[disabled] {
+  &.is-loading {
     pointer-events: none;
     position: relative;
     &:before {
@@ -150,5 +208,14 @@ $border-radius: 20px;
       background-color: hsla(0,0%,100%,.35);
     }
   }
+  &.is-round {
+    border-radius: $button-border-radius;
+    padding: 12px 23px;
+  }
+  &.is-circle {
+    border-radius: 50%;
+    padding: 12px;
+  }
+  
 }
 </style>

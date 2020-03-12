@@ -23,6 +23,16 @@ export default {
     button {
       border-radius: 0;
       position: relative;
+      &:first-child {
+        border-right-color: hsla(0,0%,100%,.5);
+      }
+      &:last-child {
+        border-left-color: hsla(0,0%,100%,.5);
+      }
+      &:not(:first-child):not(:last-child) {
+        border-left-color: hsla(0,0%,100%,.5);
+        border-right-color: hsla(0,0%,100%,.5);
+      }
       &:not(first-child) {
         margin-left: -1px;
       }

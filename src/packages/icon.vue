@@ -1,10 +1,8 @@
 <template>
-  <svg class="wzw-icon" aria-hidden="true">
-      <use :xlink:href="`#icon-${icon}`"></use>
-  </svg>
+  <i :class="['iconfont',`wzw-icon-${icon}`]"></i>
 </template>
 <script>
-import '../styles/icon'
+import '../styles/icon.scss'
 export default {
   name: 'wzw-icon',
   props: {
@@ -16,9 +14,8 @@ export default {
 }
 </script>
 <style lang="scss">
-  .wzw-icon {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
-  }
+.wzw-pulse {
+  animation: spin 1s infinite steps(8);
+}
+
 </style>
