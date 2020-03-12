@@ -1,5 +1,5 @@
 <template>
-  <button :class="btnClass" :disabled="disabled" @click="$emit('click', $event)">
+  <button :class="btnClass" :disabled="disabled || loading" @click="$emit('click', $event)">
     <wzw-icon :icon="icon" v-if="icon && !loading"></wzw-icon>
     <wzw-icon icon="loding" v-if="loading" class="icon wzw-pulse"></wzw-icon>
     <span v-if="$slots.default"><slot></slot></span>
@@ -41,6 +41,10 @@ export default {
       type: Boolean,
       default: false
     },
+    size: {
+      type: String,
+      defalut: ''
+    },
     iconPosition: {
       type: String,
       default: 'left',
@@ -72,6 +76,9 @@ export default {
       }
       if (this.loading) {
         classes.push(`is-loading`)
+      }
+      if (this.size) {
+        classes.push(`${name}-${this.size}`)
       }
       return classes
     }
@@ -158,46 +165,39 @@ $button-border-radius: 20px;
     }
   }
   @each $key, $val in (primary: $primary-disabled, warning: $warning-disabled, success: $success-disabled, info: $info-disabled, danger: $danger-disabled) {
-   &-#{$key}.is-disabled{
+   &-#{$key}.is-disabled,&-#{$key}.is-disabled:hover{
       background-color: #{$val};
       border: 1px solid #{$val};
       color: #fff;
-      fill: #fff;
     }
   }
-  // .icon {
-  //   & + span {
-  //     margin-left: 4px;
-  //   }
-  // }
-  // &-icon-left {
-  //   svg {
-  //     order: 1
-  //   }
-  //   span {
-  //     order: 2
-  //   }
-  // }
+  & {
+     >i + span {
+       margin-left: 5px;
+     }
+  }
   &-icon-left {
-     
+    i {
+      order: 1;
+    }
+    span {
+      order: 2;
+    }
   }
   &-icon-right {
-    // i[class^=wzw-icon] {
-    //   margin-left: 10px;
-    // }
-   i[class~=wzw-icon] {
-     order: 2;
-     margin-left: 5px;
-   }
-  //   .icon + span {
-  //     order: 1;
-  //     margin-left: 0;
-  //   }
+    i + span {
+      order: 1;
+      margin-left: 0;
+    }
+    [class*=wzw-icon] {
+      order: 2;
+      margin-left: 5px;
+    }
   }
   &.is-loading {
     pointer-events: none;
     position: relative;
-    &:before {
+    &:after {
       pointer-events: none;
       content: "";
       position: absolute;
@@ -215,6 +215,30 @@ $button-border-radius: 20px;
   &.is-circle {
     border-radius: 50%;
     padding: 12px;
+  }
+  &-medium.is-round {
+    padding: 10px 20px;
+  }
+  &-small.is-round {
+    padding: 9px 15px;
+  }
+  &-mini.is-round {
+    padding: 7px 15px;
+  }
+  &-medium {
+    padding: 10px 20px;
+    font-size: $font-size;
+    border-radius: $border-radius;
+  }
+  &-small {
+    padding: 9px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  &-mini {
+    padding: 7px 15px;
+    font-size: 12px;
+    border-radius: 3px;
   }
   
 }

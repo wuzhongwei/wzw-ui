@@ -40,8 +40,7 @@
     </div>
     <div class="row">
       <wzw-button-group>
-        <wzw-button type="primary" icon="left">上一页</wzw-button>
-        <wzw-button type="primary" icon="left">上一页</wzw-button>
+        <wzw-button type="primary" icon="left" iconPosition="left">上一页</wzw-button>
         <wzw-button type="primary" icon="fenye-shangyiye" iconPosition="right">下一页</wzw-button>
       </wzw-button-group>
       <wzw-button-group>
@@ -54,6 +53,19 @@
       <wzw-button type="text">文字按钮</wzw-button>
       <wzw-button type="text" disabled>文字按钮</wzw-button>
     </div>
+     <div class="row">
+      <wzw-button>默认按钮</wzw-button>
+      <wzw-button size="medium">中等按钮</wzw-button>
+      <wzw-button size="small">小型按钮</wzw-button>
+      <wzw-button size="mini">超小按钮</wzw-button>
+    </div>
+    <div class="row">
+      <wzw-button round>默认按钮</wzw-button>
+      <wzw-button size="medium" round>中等按钮</wzw-button>
+      <wzw-button size="small" round>小型按钮</wzw-button>
+      <wzw-button size="mini" round>超小按钮</wzw-button>
+    </div>
+   
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>
 </template>

@@ -6,8 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "test": "karma start"
+    "test": "karma start",
+    "lib": "vue-cli-service build --target lib --name wzw-ui ./src/packages/index.js"
   },
+  "main": "./dist/wzw-ui.umd.min.js",
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
