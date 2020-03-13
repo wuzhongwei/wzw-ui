@@ -65,6 +65,11 @@
       <wzw-button size="small" round>小型按钮</wzw-button>
       <wzw-button size="mini" round>超小按钮</wzw-button>
     </div>
+    <div class="row">
+      <wzw-button nativeType="button" round>默认按钮</wzw-button>
+      <wzw-button nativeType="submit" size="medium" round>中等按钮</wzw-button>
+      <wzw-button nativeType="reset" size="small" round>小型按钮</wzw-button>
+    </div>
    
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>

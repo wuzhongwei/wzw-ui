@@ -1,5 +1,5 @@
 <template>
-  <button :class="btnClass" :disabled="disabled || loading" @click="$emit('click', $event)">
+  <button :autofocus="autofocus" :type="nativeType" :class="btnClass" :disabled="disabled || loading" @click="$emit('click', $event)">
     <wzw-icon :icon="icon" v-if="icon && !loading"></wzw-icon>
     <wzw-icon icon="loding" v-if="loading" class="icon wzw-pulse"></wzw-icon>
     <span v-if="$slots.default"><slot></slot></span>
@@ -22,25 +22,18 @@ export default {
         return true
       }
     },
+    nativeType: {
+      type: String,
+      default: 'button'
+    },
     icon: {
       type: String
     },
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    round: {
-      type: Boolean,
-      default: false
-    },
-    circle: {
-      type: Boolean,
-      default: false
-    },
+    loading: Boolean,
+    disabled: Boolean,
+    round: Boolean,
+    circle: Boolean,
+    autofocus: Boolean,
     size: {
       type: String,
       defalut: ''
