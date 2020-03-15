@@ -34,7 +34,23 @@ $primary-light-6: mix($white, $primary, 60%); /* b3d8ff */
 $primary-light-7: mix($white, $primary, 70%); /* c6e2ff */
 $primary-light-8: mix($white, $primary, 80%); /* d9ecff */
 $primary-light-9: mix($white, $primary, 90%); /* ecf5ff */
-
+$--sm: 768px;
+$--md: 992px;
+$--lg: 1200px;
+$--xl: 1920px;
+$map: (
+  "xs": (max-width: $--sm - 1),
+  "sm": (min-width: $--sm),
+  "md": (min-width: $--md),
+  "lg": (min-width: $--lg),
+  "xl": (min-width: $--xl),
+);
+//inspect 将(min-width: 768px)转字符串，否则会报错
+@mixin res($key) {
+  @media only screen and #{inspect(map-get($map,$key))} {
+    @content;
+  }
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);

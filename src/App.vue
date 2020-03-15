@@ -70,6 +70,33 @@
       <wzw-button nativeType="submit" size="medium" round>中等按钮</wzw-button>
       <wzw-button nativeType="reset" size="small" round>小型按钮</wzw-button>
     </div>
+    <wzw-row>
+      <wzw-col :span="12" style="background:red">12</wzw-col>
+      <wzw-col :span="12" style="background:blue">12</wzw-col>
+      <wzw-col :span="24" style="background:red">22222</wzw-col>
+    </wzw-row>
+    <wzw-row>
+      <wzw-col style="background:red">24</wzw-col>
+    </wzw-row>
+    <wzw-row>
+      <wzw-col :span="6" style="background:red">12</wzw-col>
+      <wzw-col :span="6" :offset="12" style="background:blue">24</wzw-col>
+    </wzw-row>
+    <wzw-row>
+      <wzw-col :span="6">
+        <div class="box" style="background:red"></div>
+      </wzw-col>
+      <wzw-col :span="6"><div class="box"  style="background:blue"></div></wzw-col>
+      <wzw-col :span="6"><div class="box"  style="background:red"></div></wzw-col>
+      <wzw-col :span="6"><div class="box"  style="background:blue"></div></wzw-col>
+    </wzw-row>
+    <wzw-row :gutter="10">
+      <wzw-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></wzw-col>
+    </wzw-row>
+
    
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>
@@ -103,6 +130,22 @@ export default {
   }
   .wzw-button-group + .wzw-button-group {
     margin-left: 10px;
+  }
+  .box {
+    height: 30px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
   }
 }
 </style>

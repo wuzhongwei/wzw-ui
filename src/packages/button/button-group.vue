@@ -16,7 +16,7 @@ export default {
 }
 </script>
 <style lang="scss">
-  @import '../styles/_val.scss';
+  @import '../../styles/_val.scss';
   .wzw-button-group {
     display: inline-flex;
     vertical-align: middle;
