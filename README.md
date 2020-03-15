@@ -1,24 +1,13 @@
-# wzw-ui
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+## wzw-ui
+[![npm version](https://badge.fury.io/js/wzw-ui.svg)](https://badge.fury.io/js/wzw-ui)
+## QuickStart
+```base
+npm install wzw-ui
 ```
 
-### Compiles and minifies for production
+##usage
 ```
-npm run build
+import WzwUi from 'wzw-ui'
+import 'wzw-ui/dist/wzw-ui.css'
+Vue.use(WzwUi)
 ```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
