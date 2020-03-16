@@ -70,26 +70,127 @@
       <wzw-button nativeType="submit" size="medium" round>中等按钮</wzw-button>
       <wzw-button nativeType="reset" size="small" round>小型按钮</wzw-button>
     </div>
-    <wzw-row>
-      <wzw-col :span="12" style="background:red">12</wzw-col>
-      <wzw-col :span="12" style="background:blue">12</wzw-col>
-      <wzw-col :span="24" style="background:red">22222</wzw-col>
+    <h2>基础布局</h2>
+    <wzw-row class="row">
+      <wzw-col :span="24"><div class="grid-content bg-purple-dark"></div></wzw-col>
     </wzw-row>
-    <wzw-row>
-      <wzw-col style="background:red">24</wzw-col>
+    <wzw-row class="row">
+      <wzw-col :span="12"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="12"><div class="grid-content bg-purple-light"></div></wzw-col>
     </wzw-row>
-    <wzw-row>
-      <wzw-col :span="6" style="background:red">12</wzw-col>
-      <wzw-col :span="6" :offset="12" style="background:blue">24</wzw-col>
+    <wzw-row class="row">
+      <wzw-col :span="8"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="8"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="8"><div class="grid-content bg-purple"></div></wzw-col>
     </wzw-row>
-    <wzw-row>
-      <wzw-col :span="6">
-        <div class="box" style="background:red"></div>
-      </wzw-col>
-      <wzw-col :span="6"><div class="box"  style="background:blue"></div></wzw-col>
-      <wzw-col :span="6"><div class="box"  style="background:red"></div></wzw-col>
-      <wzw-col :span="6"><div class="box"  style="background:blue"></div></wzw-col>
+    <wzw-row class="row">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
     </wzw-row>
+    <wzw-row class="row">
+      <wzw-col :span="4"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="4"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="4"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="4"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="4"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="4"><div class="grid-content bg-purple-light"></div></wzw-col>
+    </wzw-row>
+    <h2>分栏间隔</h2>
+    <wzw-row :gutter="20" class="row">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+
+    <h2>混合布局</h2>
+    <wzw-row :gutter="20" class="row">
+      <wzw-col :span="16"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="8"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row :gutter="20" class="row">
+      <wzw-col :span="8"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="8"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="4"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="4"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row :gutter="20" class="row">
+      <wzw-col :span="4"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="16"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="4"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <h2>分栏偏移</h2>
+    <wzw-row :gutter="20" class="row">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row :gutter="20" class="row">
+      <wzw-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row :gutter="20" class="row">
+      <wzw-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <h2>对齐方式水平</h2>
+    <wzw-row class="row-bg">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="row-bg" align-h="center">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="row-bg" align-h="end">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="row-bg" align-h="space-between">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="row-bg" align-h="space-around">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <h2>对齐方式垂直</h2>
+    <wzw-row class="h200" align-v="flex-start">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="h200" align-v="flex-end">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="h200" align-v="stretch">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="h200" align-v="baseline">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="h200" align-v="center">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <wzw-row class="h200" align-v="initial">
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple-light"></div></wzw-col>
+      <wzw-col :span="6"><div class="grid-content bg-purple"></div></wzw-col>
+    </wzw-row>
+    <h2>响应式布局</h2>
     <wzw-row :gutter="10">
       <wzw-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple"></div></wzw-col>
       <wzw-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple-light"></div></wzw-col>
@@ -146,6 +247,39 @@ export default {
   .grid-content {
     border-radius: 4px;
     min-height: 36px;
+  }
+   .el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+  .h200 {
+    height: 160px;
+    background-color: rgba(255,0,0,.1);
+    & + .h200 {
+      margin-top: 20px;
+    }
   }
 }
 </style>

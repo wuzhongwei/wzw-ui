@@ -1,8 +1,3 @@
-<template>
-  <div :class="colClass" :style="colStyle">
-    <slot></slot>
-  </div>
-</template>
 <script>
 export default {
   name: 'wzw-col',
@@ -14,6 +9,10 @@ export default {
     offset: {
       type: Number,
       default: null
+    },
+    tag: {
+      type: String,
+      default: 'div'
     },
     xs: [Number, Object],
     sm: [Number, Object],
@@ -53,6 +52,12 @@ export default {
       }
       return style
     }
+  },
+  render (h) {
+    return h(this.tag, {
+      class: this.colClass,
+      style: this.colStyle
+    }, this.$slots.default)
   }
 }
 </script>

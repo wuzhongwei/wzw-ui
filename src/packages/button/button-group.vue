@@ -11,7 +11,6 @@ export default {
     child.forEach(element => {
       console.assert(element.tagName === 'BUTTON', '子元素必须为Button')
     });
-    
   },
 }
 </script>
