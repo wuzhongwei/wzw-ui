@@ -45,6 +45,7 @@ $map: (
   "lg": (min-width: $--lg),
   "xl": (min-width: $--xl),
 );
+
 //inspect 将(min-width: 768px)转字符串，否则会报错
 @mixin res($key) {
   @media only screen and #{inspect(map-get($map,$key))} {

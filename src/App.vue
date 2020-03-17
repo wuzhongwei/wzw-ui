@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="row">
+    <!-- <div class="row">
       <wzw-button>默认按钮</wzw-button>
       <wzw-button type="warning">警告按钮</wzw-button>
       <wzw-button type="danger">危险按钮</wzw-button>
@@ -197,8 +197,72 @@
       <wzw-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11"><div class="grid-content bg-purple"></div></wzw-col>
       <wzw-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></wzw-col>
     </wzw-row>
+    <wzw-container>
+      <wzw-header>Header</wzw-header>
+      <wzw-main>Main</wzw-main>
+    </wzw-container>
 
-   
+    <wzw-container>
+      <wzw-header>Header</wzw-header>
+      <wzw-main>Main</wzw-main>
+      <wzw-footer>Footer</wzw-footer>
+    </wzw-container>
+
+    <wzw-container>
+      <wzw-aside width="200px">Aside</wzw-aside>
+      <wzw-main>Main</wzw-main>
+    </wzw-container>
+
+    <wzw-container>
+      <wzw-header>Header</wzw-header>
+      <wzw-container>
+        <wzw-aside width="200px">Aside</wzw-aside>
+        <wzw-main>Main</wzw-main>
+      </wzw-container>
+    </wzw-container>
+
+    <wzw-container>
+      <wzw-header>Header</wzw-header>
+      <wzw-container>
+        <wzw-aside width="200px">Aside</wzw-aside>
+        <wzw-container>
+          <wzw-main>Main</wzw-main>
+          <wzw-footer>Footer</wzw-footer>
+        </wzw-container>
+      </wzw-container>
+    </wzw-container>
+
+    <wzw-container>
+      <wzw-aside width="200px">Aside</wzw-aside>
+      <wzw-container>
+        <wzw-header>Header</wzw-header>
+        <wzw-main>Main</wzw-main>
+      </wzw-container>
+    </wzw-container>
+
+    <wzw-container>
+      <wzw-aside width="200px">Aside</wzw-aside>
+      <wzw-container>
+        <wzw-header>Header</wzw-header>
+        <wzw-main>Main</wzw-main>
+        <wzw-footer>Footer</wzw-footer>
+      </wzw-container>
+    </wzw-container> -->
+    <wzw-input 
+    v-model="input"
+    type="text"
+   ></wzw-input>
+   <wzw-input
+    placeholder="请输入内容"
+    v-model="input"
+    :disabled="true">
+  </wzw-input>
+  <wzw-input
+    placeholder="请输入内容"
+    v-model="input"
+    clearable>
+  </wzw-input>
+   {{input}}
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>
 </template>
@@ -206,6 +270,11 @@
 <script>
 export default {
   name: 'App',
+  data () {
+    return {
+      input: ''
+    }
+  },
   methods: {
     fn (e) {
       console.log(e)
@@ -248,13 +317,13 @@ export default {
     border-radius: 4px;
     min-height: 36px;
   }
-   .el-row {
+   .wzw-row {
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  .el-col {
+  .wzw-col {
     border-radius: 4px;
   }
   .bg-purple-dark {
@@ -282,4 +351,37 @@ export default {
     }
   }
 }
+.wzw-header, .wzw-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  .wzw-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+  }
+  
+  .wzw-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+  }
+  
+  body > .wzw-container {
+    margin-bottom: 40px;
+  }
+  
+  .wzw-container:nth-child(5) .wzw-aside,
+  .wzw-container:nth-child(6) .wzw-aside {
+    line-height: 260px;
+  }
+  
+  .wzw-container:nth-child(7) .wzw-aside {
+    line-height: 320px;
+  }
 </style>
