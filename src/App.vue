@@ -262,6 +262,25 @@
     v-model="input"
     clearable>
   </wzw-input>
+  <wzw-input
+    style="width: 180px;"
+    placeholder="请输入内容"
+    v-model="input"
+    show-password>
+  </wzw-input>
+  <wzw-input
+    style="width: 180px;"
+    placeholder="请输入内容"
+    v-model="input"
+    prefix-icon="wzw-icon-diqu"
+    >
+  </wzw-input>
+  <wzw-input
+    style="width: 180px;"
+    placeholder="请输入内容"
+    v-model="input"
+    suffix-icon="wzw-icon-diqu">
+  </wzw-input>
    {{input}}
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>
@@ -272,14 +291,19 @@ export default {
   name: 'App',
   data () {
     return {
-      input: ''
+      input: '',
+      arr: [12,3,4]
     }
   },
   methods: {
     fn (e) {
       console.log(e)
     }
-  }
+  },
+  mounted() {
+    
+    console.log(this.$delete(this.arr,2))
+  },
 }
 </script>
 
