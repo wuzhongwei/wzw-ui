@@ -81,7 +81,7 @@ export default {
   &-inner{
     cursor: pointer;
     font-family: inherit;
-    -webkit-appearance: none;
+    appearance: none;
     background-color: #fff;
     border-radius: 4px;
     border: 1px solid #dcdfe6;
