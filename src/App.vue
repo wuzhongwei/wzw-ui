@@ -249,9 +249,9 @@
       </wzw-container>
     </wzw-container> -->
     <wzw-input 
-    v-model="input"
-    type="text"
-   ></wzw-input>
+      v-model="input"
+      type="text"
+    ></wzw-input>
    <wzw-input
     placeholder="请输入内容"
     v-model="input"
@@ -260,6 +260,7 @@
   <wzw-input
     placeholder="请输入内容"
     v-model="input"
+    style="width:300px"
     clearable>
   </wzw-input>
   <wzw-input
@@ -281,6 +282,25 @@
     v-model="input"
     suffix-icon="wzw-icon-diqu">
   </wzw-input>
+   slot 方式：
+  <wzw-input
+    placeholder="请选择日期"
+    style="width: 180px;"
+    v-model="input">
+    <i slot="suffix" class="wzw-input__icon wzw-icon-diqu"></i>
+  </wzw-input>
+  <wzw-input
+    placeholder="请输入内容"
+    style="width: 180px;"
+    v-model="input">
+    <i slot="prefix" class="wzw-input__icon wzw-icon-diqu"></i>
+  </wzw-input>
+  <wzw-input
+    type="textarea"
+    :rows="2"
+    placeholder="请输入内容"
+    v-model="input">
+  </wzw-input>
    {{input}}
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>
@@ -291,8 +311,7 @@ export default {
   name: 'App',
   data () {
     return {
-      input: '',
-      arr: [12,3,4]
+      input: ''
     }
   },
   methods: {
@@ -301,8 +320,6 @@ export default {
     }
   },
   mounted() {
-    
-    console.log(this.$delete(this.arr,2))
   },
 }
 </script>
