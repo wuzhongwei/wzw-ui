@@ -2,7 +2,7 @@
   <i :class="['iconfont',`wzw-icon-${icon}`]"></i>
 </template>
 <script>
-import '../styles/icon.scss'
+import '@/styles/icon.scss'
 export default {
   name: 'wzw-icon',
   props: {
@@ -14,6 +14,7 @@ export default {
 }
 </script>
 <style lang="scss">
+@import "@/styles/input.scss";
 .wzw-pulse {
   animation: spin 1s infinite steps(8);
 }

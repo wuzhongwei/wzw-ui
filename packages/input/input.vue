@@ -160,7 +160,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$attrs)
+    // console.log(this.$attrs)
   },
 }
 //给组件绑定事件都时候可以绑定不上，需要加修饰符@click.native给原生元素绑事件
@@ -168,100 +168,4 @@ export default {
 </script>
 <style lang="scss">
 
-.wzw-input {
-  position: relative;
-  font-size: 14px;
-  display: inline-block;
-  width: 100%;
-  
-  &__inner{
-    cursor: pointer;
-    font-family: inherit;
-    appearance: none;
-    background-color: #fff;
-    border-radius: 4px;
-    border: 1px solid #dcdfe6;
-    color: #606266;
-    display: inline-block;
-    font-size: inherit;
-    height: 40px;
-    line-height: 40px;
-    outline: none;
-    padding: 0 15px;
-    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
-    width: 100%;
-    &:hover {
-      border-color: #c0c4cc;
-    }
-    &:focus {
-      border-color: #409eff;
-    }
-    &::placeholder {
-      color: #C0C4CC;
-    }
-  }
-  &.is-disabled &__inner {
-    background-color: #f5f7fa;
-    border-color: #e4e7ed;
-    color: #c0c4cc;
-    cursor: not-allowed;
-  }
-  &--suffix {
-    .wzw-input__inner {
-      padding-right: 30px;
-    }
-  }
-  &--prefix {
-    .wzw-input__inner {
-      padding-left: 30px;
-    }
-  }
-  &__prefix, &__suffix {
-    position: absolute;
-    // pointer-events: none;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    line-height: 40px;
-    color: #c0c4cc;
-    .wzw-icon-guanbi, .wzw-icon-eye  {
-      cursor: pointer;
-      &:hover {
-        color: #909399;
-      }
-    }
-    >.wzw-input__icon {
-      width: 25px;
-      text-align: center;
-    }
-  }
-  &__prefix {
-    left: 5px;
-  }
-  &__suffix {
-    right: 5px;
-  }
-}
-.wzw-textarea {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  vertical-align: bottom;
-  font-size: 14px;
-  &__inner {
-    display: block;
-    resize: vertical;
-    padding: 5px 15px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    width: 100%;
-    font-size: inherit;
-    color: #606266;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #dcdfe6;
-    border-radius: 4px;
-    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
-  }
-}
 </style>

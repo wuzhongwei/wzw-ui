@@ -1,5 +1,5 @@
 import Button from './button/button'
-import Icon from './icon'
+import Icon from './icon/icon.vaue'
 import ButtonGroup from './button/button-group'
 import Col from './layout/col.vue'
 import Row from './layout/row.vue'
@@ -8,7 +8,7 @@ import Aside from './container/aside.vue'
 import Footer from './container/footer.vue'
 import Header from './container/header.vue'
 import Main from './container/main.vue'
-import Input from './input.vue'
+import Input from './input/input.vue'
 
 const install = (Vue) => {
   Vue.component(Button.name, Button)

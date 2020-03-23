@@ -79,7 +79,7 @@ export default {
 }
 </script>
 <style lang="scss">
-@import '../../styles/_val.scss';
+@import '@/styles/_val.scss';
 $height: 42px;
 $font-size: 14px;
 $color: #606266;
