@@ -1,20 +1,48 @@
 <template>
-  <div :class="inputClass">
-    <input 
-      class="wzw-input-inner"
+  <div 
+    :class="inputClass"
+    @mouseleave="isHover = false"
+    @mouseenter="isHover = true"
+  >
+    <input
+      ref="input"
+      class="wzw-input__inner"
       v-bind="$attrs"
-      :type="type" 
+      :type="showPassword ? passwordVisible ? 'password' : 'text' : type" 
       :value="value" 
       @input="input"
+      @focus="focus"
+      @blur="blur"
       :placeholder="placeholder"
       :autocomplete="autocomplete"
       :disabled="disabled"
     >
-    <span 
-      v-if="clearable"
-      class="wzw-icon-guanbi" 
-      @click="$emit('input', '')"
-    ></span>
+    <span class="wzw-input__prefix">
+      <span 
+        v-if="prefixIcon"
+        class="wzw-input__icon"
+        :class="prefixIcon" 
+      ></span>
+    </span>
+    <span class="wzw-input__suffix">
+      <span 
+        v-if="suffixIcon"
+        class="wzw-input__icon"
+        :class="suffixIcon" 
+      ></span>
+      <span 
+        v-if="showClear"
+        class="wzw-input__icon wzw-icon-guanbi" 
+        @click="handleCloes"
+        @mousedown.prevent
+      ></span>
+      <span 
+        v-if="value && showPassword"
+        @click="changePassword"
+        class="wzw-input__icon wzw-icon-eye" 
+      ></span>
+    </span>
+    
   </div>
 </template>
 <script>
@@ -45,6 +73,19 @@ export default {
     clearable: {
       type: Boolean,
       default: false
+    },
+    showPassword: {
+      type: Boolean,
+      default: false
+    },
+    prefixIcon: String,
+    suffixIcon: String
+  },
+  data () {
+    return {
+      passwordVisible: false,
+      isHover: false, // 是否显示清空按钮
+      focused: false // 是否获取焦点
     }
   },
   computed: {
@@ -53,15 +94,36 @@ export default {
       if (this.disabled) {
         classes.push(`is-disabled`)
       }
-      if (this.clearable) {
-        classes.push(`wzw-input-suffix`)
+      if (this.clearable || this.showPassword || this.suffixIcon) {
+        classes.push(`wzw-input--suffix`)
+      }
+      if (this.prefixIcon) {
+        classes.push(`wzw-input--prefix`)
       }
       return classes
+    },
+    showClear () {
+      return this.clearable && this.value && (this.focused || this.isHover)
     }
   },
   methods: {
     input (e) {
       this.$emit('input', e.target.value)
+    },
+    handleCloes () {
+      this.$emit('input', '')
+    },
+    focus () {
+      this.focused = true
+    },
+    blur () {
+      this.focused = false
+    },
+    changePassword () {
+      this.passwordVisible = !this.passwordVisible
+      this.$nextTick(() => {
+        this.$refs.input.focus()
+      })
     }
   },
   mounted() {
@@ -72,13 +134,14 @@ export default {
 //mousedown.native.prevent 阻止默认行为
 </script>
 <style lang="scss">
+
 .wzw-input {
   position: relative;
   font-size: 14px;
   display: inline-block;
   width: 100%;
   
-  &-inner{
+  &__inner{
     cursor: pointer;
     font-family: inherit;
     appearance: none;
@@ -104,21 +167,46 @@ export default {
       color: #C0C4CC;
     }
   }
-  &.is-disabled &-inner {
+  &.is-disabled &__inner {
     background-color: #f5f7fa;
     border-color: #e4e7ed;
     color: #c0c4cc;
     cursor: not-allowed;
   }
-  &-suffix {
-    .wzw-icon-guanbi {
-      position: absolute;
-      right: 0;
-      margin: auto;
-      top: 0;
-      bottom: 0;
-      cursor: pointer;
+  &--suffix {
+    .wzw-input__inner {
+      padding-right: 30px;
     }
+  }
+  &--prefix {
+    .wzw-input__inner {
+      padding-left: 30px;
+    }
+  }
+  &__prefix, &__suffix {
+    position: absolute;
+    // pointer-events: none;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    line-height: 40px;
+    color: #c0c4cc;
+    .wzw-icon-guanbi, .wzw-icon-eye  {
+      cursor: pointer;
+      &:hover {
+        color: #909399;
+      }
+    }
+    >.wzw-input__icon {
+      width: 25px;
+      text-align: center;
+    }
+  }
+  &__prefix {
+    left: 5px;
+  }
+  &__suffix {
+    right: 5px;
   }
 }
 </style>
