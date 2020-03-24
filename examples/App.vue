@@ -301,6 +301,7 @@
     placeholder="请输入内容"
     v-model="input">
   </wzw-input>
+  <wzw-button>默认按钮</wzw-button>
    {{input}}
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>

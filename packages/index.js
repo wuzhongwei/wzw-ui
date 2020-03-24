@@ -1,4 +1,4 @@
-import Button from './button/button'
+import Button from './button'
 // import Icon from './icon/icon.vue'
 // import ButtonGroup from './button/button-group'
 // import Col from './layout/col.vue'
@@ -8,10 +8,19 @@ import Button from './button/button'
 // import Footer from './container/footer.vue'
 // import Header from './container/header.vue'
 // import Main from './container/main.vue'
-import Input from './input/input.vue'
+
+import Input from './input'
+
+const components = [
+  Button,
+  Input
+]
 
 const install = (Vue) => {
-  Vue.component(Button.name, Button)
+  components.forEach((comp) => {
+    Vue.component(comp.name, comp)
+  })
+  // Vue.component(Button.name, Button)
   // Vue.component(Icon.name, Icon)
   // Vue.component(ButtonGroup.name, ButtonGroup)
   // Vue.component(Row.name, Row)
@@ -21,12 +30,14 @@ const install = (Vue) => {
   // Vue.component(Footer.name, Footer)
   // Vue.component(Header.name, Header)
   // Vue.component(Main.name, Main)
-  Vue.component(Input.name, Input)
+  // Vue.component(Input.name, Input)
 }
 if (window.Vue) {
   install(Vue)
 }
 
 export default {
-  install
+  install,
+  Button,
+  // Input
 }
