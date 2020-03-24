@@ -167,5 +167,5 @@ export default {
 //mousedown.native.prevent 阻止默认行为
 </script>
 <style lang="scss">
-
+@import "styles/input.scss";
 </style>

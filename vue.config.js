@@ -32,8 +32,8 @@ const devConfig = {
         resolve: {
             extensions: ['.js', '.vue', '.json'],
             alias: {
-                '@': resolve('packages')
-                // 'assets': resolve('examples/assets'),
+                '@': resolve('packages'),
+                'styles': resolve('styles')
                 // 'views': resolve('examples/views'),
             }
         }
@@ -69,13 +69,15 @@ const buildConfig = {
             ...getEntries('packages'),
         },
         output: {
-            filename: '[name]/index.js',
-            libraryTarget: 'commonjs2',
+            filename: '[name].js',
+            library: 'LoadOnDemand',
+            libraryTarget: 'umd',
         },
         resolve: {
           extensions: ['.js', '.vue', '.json'],
           alias: {
-              '@': resolve('packages')
+              '@': resolve('packages'),
+              'styles': resolve('styles')
               // 'assets': resolve('examples/assets'),
               // 'views': resolve('examples/views'),
           }
