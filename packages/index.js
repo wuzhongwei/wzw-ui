@@ -39,5 +39,5 @@ if (window.Vue) {
 export default {
   install,
   Button,
-  // Input
+  Input
 }

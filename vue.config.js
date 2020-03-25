@@ -70,8 +70,9 @@ const buildConfig = {
         },
         output: {
             filename: '[name].js',
-            library: 'LoadOnDemand',
-            libraryTarget: 'umd',
+            library: 'wzw',
+            libraryExport: 'default',
+            libraryTarget: 'commonjs2',
         },
         resolve: {
           extensions: ['.js', '.vue', '.json'],
