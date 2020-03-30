@@ -1,4 +1,4 @@
-import Button from './button'
+import Button from '../packages/button'
 // import Icon from './icon/icon.vue'
 // import ButtonGroup from './button/button-group'
 // import Col from './layout/col.vue'
@@ -9,7 +9,7 @@ import Button from './button'
 // import Header from './container/header.vue'
 // import Main from './container/main.vue'
 
-import Input from './input'
+import Input from '../packages/input'
 
 const components = [
   Button,

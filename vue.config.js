@@ -19,6 +19,7 @@ function getEntries(path) {
     }, {})
     return entries
 }
+
 //开发环境配置
 const devConfig = {
     pages: {
@@ -56,6 +57,8 @@ const devConfig = {
         open: 'Google Chrome'
     }
 }
+let entryAll =  process.env.VUE_APP_SECRET === 'index' ? getEntries('all') : getEntries('packages')
+console.log(process.env.VUE_APP_SECRET)
 //生成环境配置
 const buildConfig = {
     css: {
@@ -66,13 +69,13 @@ const buildConfig = {
     },
     configureWebpack: {
         entry: {
-            ...getEntries('packages'),
+            ...entryAll,
         },
         output: {
             filename: '[name].js',
             library: 'wzw',
             libraryExport: 'default',
-            libraryTarget: 'commonjs2',
+            libraryTarget: process.env.VUE_APP_SECRET === 'index' ? 'umd' : 'commonjs2',
         },
         resolve: {
           extensions: ['.js', '.vue', '.json'],

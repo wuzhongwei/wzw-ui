@@ -9,7 +9,7 @@
   "author": "wuzhongwei",
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode prod && vue-cli-service build --mode alpha --no-clean",
     "test:unit": "vue-cli-service test:unit",
     "test": "karma start",
     "lib": "vue-cli-service build --target lib --name wzw-ui ./packages/index.js"
