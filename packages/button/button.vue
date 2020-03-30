@@ -1,7 +1,7 @@
 <template>
   <button :autofocus="autofocus" :type="nativeType" :class="btnClass" :disabled="disabled || loading" @click="$emit('click', $event)">
-    <wzw-icon :icon="icon" v-if="icon && !loading"></wzw-icon>
-    <wzw-icon icon="loding" v-if="loading" class="icon wzw-pulse"></wzw-icon>
+    <!-- <wzw-icon :icon="icon" v-if="icon && !loading"></wzw-icon>
+    <wzw-icon icon="loding" v-if="loading" class="icon wzw-pulse"></wzw-icon> -->
     <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
@@ -53,7 +53,7 @@ export default {
     btnClass () {
       let classes = [name]
       if (this.type) {
-        classes.push(`${name}-${this.type}`)
+        classes.push(`${name}--${this.type}`)
       }
       if (this.icon) {
         classes.push(`${name}-icon-${this.iconPosition}`)

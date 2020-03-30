@@ -57,8 +57,8 @@ const devConfig = {
         open: 'Google Chrome'
     }
 }
-let entryAll =  process.env.VUE_APP_SECRET === 'index' ? getEntries('all') : getEntries('packages')
-console.log(process.env.VUE_APP_SECRET)
+let entryAll =  process.env.VUE_APP_SECRET === 'index' ? getEntries('src') : getEntries('packages')
+
 //生成环境配置
 const buildConfig = {
     css: {

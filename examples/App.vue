@@ -248,7 +248,7 @@
         <wzw-footer>Footer</wzw-footer>
       </wzw-container>
     </wzw-container> -->
-    <wzw-input 
+    <!-- <wzw-input 
       v-model="input"
       type="text"
     ></wzw-input>
@@ -300,9 +300,21 @@
     :rows="2"
     placeholder="请输入内容"
     v-model="input">
-  </wzw-input>
-  <wzw-button>默认按钮</wzw-button>
-   {{input}}
+  </wzw-input> -->
+  <div class="row">
+      <wzw-button>默认按钮</wzw-button>
+      <wzw-button type="warning">警告按钮</wzw-button>
+      <wzw-button type="danger">危险按钮</wzw-button>
+      <wzw-button type="success">成功按钮</wzw-button>
+      <wzw-button type="primary">主要按钮</wzw-button>
+      <wzw-button type="info">信息按钮</wzw-button>
+      <wzw-button type="info" icon="wode">信息</wzw-button>
+      <wzw-button type="primary" icon="diqu" iconPosition="right">信息</wzw-button>
+      <wzw-button type="primary" loading>信息</wzw-button>
+      <wzw-button type="primary" @click="fn">信息222</wzw-button>
+      <wzw-button type="warning">警告按钮 <i class="wzw-icon-wode"></i> </wzw-button>
+    </div>
+ 
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>
 </template>
@@ -328,102 +340,105 @@ export default {
 <style lang="scss">
 #app {
   margin: 100px;
-  .wzw-button + .wzw-button {
-    margin-left: 10px;
-  }
-
-  .row {
-    margin-bottom: 10px;
-  }
-  .wzw-button-group {
-    .wzw-button + .wzw-button {
-      margin-left: 0;
-    }
-  }
-  .wzw-button-group + .wzw-button-group {
-    margin-left: 10px;
-  }
-  .box {
-    height: 30px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-   .wzw-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .wzw-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-  .h200 {
-    height: 160px;
-    background-color: rgba(255,0,0,.1);
-    & + .h200 {
-      margin-top: 20px;
-    }
-  }
 }
-.wzw-header, .wzw-footer {
-    background-color: #B3C0D1;
-    color: #333;
-    text-align: center;
-    line-height: 60px;
-  }
+// #app {
+//   margin: 100px;
+//   .wzw-button + .wzw-button {
+//     margin-left: 10px;
+//   }
+
+//   .row {
+//     margin-bottom: 10px;
+//   }
+//   .wzw-button-group {
+//     .wzw-button + .wzw-button {
+//       margin-left: 0;
+//     }
+//   }
+//   .wzw-button-group + .wzw-button-group {
+//     margin-left: 10px;
+//   }
+//   .box {
+//     height: 30px;
+//   }
+//   .bg-purple-dark {
+//     background: #99a9bf;
+//   }
+//   .bg-purple {
+//     background: #d3dce6;
+//   }
+//   .bg-purple-light {
+//     background: #e5e9f2;
+//   }
+//   .grid-content {
+//     border-radius: 4px;
+//     min-height: 36px;
+//   }
+//    .wzw-row {
+//     margin-bottom: 20px;
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+//   }
+//   .wzw-col {
+//     border-radius: 4px;
+//   }
+//   .bg-purple-dark {
+//     background: #99a9bf;
+//   }
+//   .bg-purple {
+//     background: #d3dce6;
+//   }
+//   .bg-purple-light {
+//     background: #e5e9f2;
+//   }
+//   .grid-content {
+//     border-radius: 4px;
+//     min-height: 36px;
+//   }
+//   .row-bg {
+//     padding: 10px 0;
+//     background-color: #f9fafc;
+//   }
+//   .h200 {
+//     height: 160px;
+//     background-color: rgba(255,0,0,.1);
+//     & + .h200 {
+//       margin-top: 20px;
+//     }
+//   }
+// }
+// .wzw-header, .wzw-footer {
+//     background-color: #B3C0D1;
+//     color: #333;
+//     text-align: center;
+//     line-height: 60px;
+//   }
   
-  .wzw-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
+//   .wzw-aside {
+//     background-color: #D3DCE6;
+//     color: #333;
+//     text-align: center;
+//     line-height: 200px;
+//   }
   
-  .wzw-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
+//   .wzw-main {
+//     background-color: #E9EEF3;
+//     color: #333;
+//     text-align: center;
+//     line-height: 160px;
+//   }
   
-  body > .wzw-container {
-    margin-bottom: 40px;
-  }
+//   body > .wzw-container {
+//     margin-bottom: 40px;
+//   }
   
-  .wzw-container:nth-child(5) .wzw-aside,
-  .wzw-container:nth-child(6) .wzw-aside {
-    line-height: 260px;
-  }
+//   .wzw-container:nth-child(5) .wzw-aside,
+//   .wzw-container:nth-child(6) .wzw-aside {
+//     line-height: 260px;
+//   }
   
-  .wzw-container:nth-child(7) .wzw-aside {
-    line-height: 320px;
-  }
+//   .wzw-container:nth-child(7) .wzw-aside {
+//     line-height: 320px;
+//   }
 </style>

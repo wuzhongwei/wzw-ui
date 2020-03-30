@@ -1,5 +1,6 @@
 $border-radius: 4px;
 $white: #fff;
+$black: #000000 !default;
 
 $primary: #409EFF;
 $success: #67c23a;
@@ -24,6 +25,31 @@ $success-disabled: #b3e19d;
 $warning-disabled: #f3d19e;
 $danger-disabled: #fab6b6;
 $info-disabled: #c8c9cc;
+//color
+$--color-text-regular: #606266 !default;
+$--border-color-base: #DCDFE6 !default;
+
+//Typography
+$--font-size-base: 14px !default;
+$--font-weight-primary: 500 !default;
+
+//border
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-radius-base: 4px !default;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
+
+
+//button
+$--button-default-background-color:$white; 
+$--button-default-border-color: $--border-color-base !default;
+$--button-default-font-color: $--color-text-regular !default;
+$--button-font-weight: $--font-weight-primary !default;
+$--button-font-size: $--font-size-base !default;
+$--button-border-radius: $--border-radius-base !default;
+$--button-padding-vertical: 12px !default;
+$--button-padding-horizontal: 20px !default;
+$--button-active-shade-percent: 10% !default;
 
 $primary-light-1: mix($white, $primary, 10%); /* 53a8ff */
 $primary-light-2: mix($white, $primary, 20%); /* 66b1ff */
