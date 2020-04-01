@@ -50,9 +50,24 @@
     border: 0; //https://blog.csdn.net/qq_31135027/article/details/79666643
   }
 
+  @include when(plain) {
+    &:hover,
+    &:focus {
+      background: $white;
+      border-color: $primary;
+      color: $primary;
+    }
+
+    &:active {
+      background: $white;
+      border-color: mix($black, $primary, $--button-active-shade-percent);
+      color: mix($black, $primary, $--button-active-shade-percent);
+      outline: none;
+    }
+  }
+
   @include m(primary) {
-    display: inline-block;
-    // @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
   }
 }
 // .wzw-button {

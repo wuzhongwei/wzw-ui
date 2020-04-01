@@ -49,6 +49,13 @@ $--button-font-size: $--font-size-base !default;
 $--button-border-radius: $--border-radius-base !default;
 $--button-padding-vertical: 12px !default;
 $--button-padding-horizontal: 20px !default;
+
+
+$--button-primary-border-color: $primary !default;
+$--button-primary-font-color: $white !default;
+$--button-primary-background-color: $primary !default;
+
+$--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
 
 $primary-light-1: mix($white, $primary, 10%); /* 53a8ff */

@@ -12,7 +12,6 @@
 }
 
 @mixin m($modifier) {
-  $selector: &;
   $currentSelector: "";
   @each $unit in $modifier {
     $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
@@ -20,6 +19,14 @@
 
   @at-root {
     #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} { // is-plain
       @content;
     }
   }
