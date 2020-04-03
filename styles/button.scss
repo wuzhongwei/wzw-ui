@@ -3,13 +3,7 @@
 @import "mixins/mixins";
 @import "mixins/utils";
 @import "mixins/_button";
-// $height: 42px;
-// $font-size: 14px;
-// $color: #606266;
-// $border-color: #dcdfe6;
-// $background: #fff;
-// $active-color: #3a8ee6;
-// $button-border-radius: 20px;
+
 @include b(button) {
   display: inline-block;
   line-height: 1;
@@ -66,8 +60,29 @@
     }
   }
 
+  @include when(round) {
+    border-radius: 20px;
+    padding: 12px 23px;
+  }
+  @include when(circle) {
+    border-radius: 50%;
+    padding: $--button-padding-vertical;
+  }
+
   @include m(primary) {
     @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+  }
+  @include m(success) {
+    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
+  }
+  @include m(warning) {
+    @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
+  }
+  @include m(danger) {
+    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
+  }
+  @include m(info) {
+    @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
   }
 }
 // .wzw-button {

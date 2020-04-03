@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 // import {Button} from '@/index'
 import Wzw from '../src/index.js'
+console.log('Wzw', Wzw)
 // import '../lib/style/index.css'
 
 Vue.config.productionTip = false

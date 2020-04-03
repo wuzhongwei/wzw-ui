@@ -39,7 +39,6 @@ $--border-style-base: solid !default;
 $--border-radius-base: 4px !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 
-
 //button
 $--button-default-background-color:$white; 
 $--button-default-border-color: $--border-color-base !default;
@@ -54,6 +53,22 @@ $--button-padding-horizontal: 20px !default;
 $--button-primary-border-color: $primary !default;
 $--button-primary-font-color: $white !default;
 $--button-primary-background-color: $primary !default;
+
+$--button-success-border-color: $success !default;
+$--button-success-font-color: $white !default;
+$--button-success-background-color: $success !default;
+
+$--button-warning-border-color: $warning !default;
+$--button-warning-font-color: $white !default;
+$--button-warning-background-color: $warning !default;
+
+$--button-danger-border-color: $danger !default;
+$--button-danger-font-color: $white !default;
+$--button-danger-background-color: $danger !default;
+
+$--button-info-border-color: $info !default;
+$--button-info-font-color: $white !default;
+$--button-info-background-color: $info !default;
 
 $--button-hover-tint-percent: 20% !default;
 $--button-active-shade-percent: 10% !default;
@@ -79,23 +94,18 @@ $map: (
   "xl": (min-width: $--xl),
 );
 
-//inspect 将(min-width: 768px)转字符串，否则会报错
-@mixin res($key) {
-  @media only screen and #{inspect(map-get($map,$key))} {
-    @content;
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(359deg);
-  }
-}
+// //inspect 将(min-width: 768px)转字符串，否则会报错
+// @mixin res($key) {
+//   @media only screen and #{inspect(map-get($map,$key))} {
+//     @content;
+//   }
+// }
+// @keyframes spin {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(359deg);
+//   }
+// }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}

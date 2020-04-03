@@ -51,6 +51,14 @@ const devConfig = {
                 return options
             })
     },
+    pluginOptions: {
+        'style-resources-loader': {
+            'preProcessor': 'sass', // 可以改成对应的sass 或者less
+            'patterns': [
+                path.resolve(__dirname, './styles/base.scss'),
+            ]
+        }
+    },
     devServer: {
         port: 8091,
         hot: true,

@@ -9,11 +9,11 @@ import Button from '../packages/button'
 // import Header from './container/header.vue'
 // import Main from './container/main.vue'
 
-import Input from '../packages/input'
+// import Input from '../packages/input'
 
 const components = [
   Button,
-  Input
+  // Input
 ]
 
 const install = (Vue) => {
@@ -39,5 +39,5 @@ if (window.Vue) {
 export default {
   install,
   Button,
-  Input
+  // Input
 }
