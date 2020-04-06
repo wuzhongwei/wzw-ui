@@ -53,9 +53,9 @@ const devConfig = {
     },
     pluginOptions: {
         'style-resources-loader': {
-            'preProcessor': 'sass', // 可以改成对应的sass 或者less
+            'preProcessor': 'scss', // 可以改成对应的sass 或者less
             'patterns': [
-                path.resolve(__dirname, './styles/base.scss'),
+                path.resolve(__dirname, 'styles/base.scss'),
             ]
         }
     },
@@ -121,6 +121,14 @@ const buildConfig = {
                 option.fallback.options.name = 'static/fonts/[name].[hash:8].[ext]'
                 return option
             })
+    },
+    pluginOptions: {
+        'style-resources-loader': {
+            'preProcessor': 'scss', // 可以改成对应的sass 或者less
+            'patterns': [
+                path.resolve(__dirname, 'styles/base.scss'),
+            ]
+        }
     },
     outputDir: 'lib',
     productionSourceMap: false,
