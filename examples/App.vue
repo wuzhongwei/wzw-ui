@@ -325,7 +325,7 @@
     <wzw-button type="warning" round>警告按钮</wzw-button>
     <wzw-button type="danger" round>危险按钮</wzw-button>
   </div>
-  <div>
+  <div class="row">
     <wzw-button icon="wzw-icon-search" circle></wzw-button>
     <wzw-button type="primary" icon="wzw-icon-edit" circle></wzw-button>
     <wzw-button type="success" icon="wzw-icon-check" circle></wzw-button>
@@ -333,7 +333,52 @@
     <wzw-button type="warning" icon="wzw-icon-star-off" circle></wzw-button>
     <wzw-button type="danger" icon="wzw-icon-delete" circle></wzw-button>
   </div>
- 
+  <div class="row">
+    <wzw-button disabled>默认按钮</wzw-button>
+    <wzw-button type="primary" disabled>主要按钮</wzw-button>
+    <wzw-button type="success" disabled>成功按钮</wzw-button>
+    <wzw-button type="info" disabled>信息按钮</wzw-button>
+    <wzw-button type="warning" disabled>警告按钮</wzw-button>
+    <wzw-button type="danger" disabled>危险按钮</wzw-button>
+  </div>
+  <div class="row">
+    <wzw-button type="text">文字按钮</wzw-button>
+    <wzw-button type="text" disabled>文字按钮</wzw-button>
+  </div>
+  <div class="row">
+    <wzw-button type="primary" icon="wzw-icon-edit"></wzw-button>
+    <wzw-button type="primary" icon="wzw-icon-share"></wzw-button>
+    <wzw-button type="primary" icon="wzw-icon-delete"></wzw-button>
+    <wzw-button type="primary" icon="wzw-icon-search">搜索</wzw-button>
+    <wzw-button type="primary">上传<i class="wzw-icon-upload wzw-icon--right"></i></wzw-button>
+  </div>
+  <div class="row">
+    <wzw-button-group>
+      <wzw-button type="primary" icon="wzw-icon-arrow-left">上一页</wzw-button>
+      <wzw-button type="primary">下一页<i class="wzw-icon-arrow-right wzw-icon--right"></i></wzw-button>
+    </wzw-button-group>
+    <wzw-button-group style="margin-left:20px;">
+      <wzw-button type="primary" icon="wzw-icon-edit"></wzw-button>
+      <wzw-button type="primary" icon="wzw-icon-share"></wzw-button>
+      <wzw-button type="primary" icon="wzw-icon-share"></wzw-button>
+      <wzw-button type="primary" icon="wzw-icon-delete"></wzw-button>
+    </wzw-button-group>
+  </div>
+  <div class="row">
+    <wzw-button type="primary" :loading="true">加载中</wzw-button>
+  </div>
+  <div class="row">
+    <wzw-button>默认按钮</wzw-button>
+    <wzw-button size="medium">中等按钮</wzw-button>
+    <wzw-button size="small">小型按钮</wzw-button>
+    <wzw-button size="mini">超小按钮</wzw-button>
+  </div>
+  <div class="row">
+    <wzw-button round>默认按钮</wzw-button>
+    <wzw-button size="medium" round>中等按钮</wzw-button>
+    <wzw-button size="small" round>小型按钮</wzw-button>
+    <wzw-button size="mini" round native-type="reset">超小按钮</wzw-button>
+  </div>
     <!-- <wzw-icon icon="wode"></wzw-icon> -->
   </div>
 </template>
@@ -347,7 +392,7 @@ export default {
     }
   },
   methods: {
-    fn (e) {
+    handleClick (e) {
       console.log(e)
     }
   },
@@ -356,12 +401,15 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 body {
   margin: 0;
 }
 #app {
   margin: 100px;
+}
+.row {
+  margin-top: 10px;
 }
 // #app {
 //   margin: 100px;

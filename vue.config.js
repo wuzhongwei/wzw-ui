@@ -50,6 +50,7 @@ const devConfig = {
             .tap(options => {
                 return options
             })
+            
     },
     pluginOptions: {
         'style-resources-loader': {
@@ -113,14 +114,6 @@ const buildConfig = {
         config.plugins.delete('prefetch')
         config.plugins.delete('hmr')
         config.entryPoints.delete('app')
-
-        config.module
-            .rule('fonts')
-            .use('url-loader')
-            .tap(option => {
-                option.fallback.options.name = 'static/fonts/[name].[hash:8].[ext]'
-                return option
-            })
     },
     pluginOptions: {
         'style-resources-loader': {

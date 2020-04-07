@@ -8,12 +8,12 @@ export default {
   name: 'wzw-button-group',
   mounted() {
     const child = this.$el.children
-    child.forEach(element => {
-      console.assert(element.tagName === 'BUTTON', '子元素必须为Button')
-    });
+    for (let i = 0; i < child.length; i++) {
+      console.assert(child[i].tagName === 'BUTTON', '子元素必须为Button')
+    }
   },
 }
 </script>
 <style lang="scss">
-  @import 'styles/button-group.scss';
+@import "styles/button.scss";
 </style>

@@ -1,4 +1,5 @@
 import Button from '../packages/button'
+import ButtonGroup from '../packages/button-group'
 // import Icon from './icon/icon.vue'
 // import ButtonGroup from './button/button-group'
 // import Col from './layout/col.vue'
@@ -13,6 +14,7 @@ import Button from '../packages/button'
 
 const components = [
   Button,
+  ButtonGroup
   // Input
 ]
 
@@ -39,5 +41,6 @@ if (window.Vue) {
 export default {
   install,
   Button,
+  ButtonGroup
   // Input
 }

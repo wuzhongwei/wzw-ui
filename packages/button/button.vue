@@ -1,7 +1,6 @@
 <template>
   <button :autofocus="autofocus" :type="nativeType" :class="btnClass" :disabled="disabled || loading" @click="$emit('click', $event)">
-    <!-- <wzw-icon :icon="icon" v-if="icon && !loading"></wzw-icon>
-    <wzw-icon icon="loding" v-if="loading" class="icon wzw-pulse"></wzw-icon> -->
+    <i class="wzw-icon-loading" v-if="loading"></i>
     <i :class="icon" v-if="icon && !loading"></i>
     <span v-if="$slots.default"><slot></slot></span>
   </button>
@@ -60,9 +59,6 @@ export default {
       if (this.plain) {
         classes.push(`is-plain`)
       }
-      // if (this.icon) {
-      //   classes.push(`${name}-icon-${this.iconPosition}`)
-      // }
       if (this.round) {
         classes.push(`is-round`)
       }
@@ -76,13 +72,13 @@ export default {
         classes.push(`is-loading`)
       }
       if (this.size) {
-        classes.push(`${name}-${this.size}`)
+        classes.push(`${name}--${this.size}`)
       }
       return classes
     }
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "styles/button.scss";
 </style>
