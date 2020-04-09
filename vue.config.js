@@ -56,7 +56,7 @@ const devConfig = {
         'style-resources-loader': {
             'preProcessor': 'scss', // 可以改成对应的sass 或者less
             'patterns': [
-                path.resolve(__dirname, 'styles/base.scss'),
+                path.resolve(__dirname, 'styles/index.scss'),
             ]
         }
     },
@@ -66,7 +66,14 @@ const devConfig = {
         open: 'Google Chrome'
     }
 }
-let entryAll =  process.env.VUE_APP_SECRET === 'index' ? getEntries('src') : getEntries('packages')
+let VUE_APP = process.env.VUE_APP_SECRET
+let entryAll = VUE_APP === 'index' || VUE_APP === 'common' ? getEntries('src') : getEntries('packages')
+let libraryTarget = ''
+if (VUE_APP === 'common' || VUE_APP === 'comp') {
+    libraryTarget = 'commonjs2'
+} else {
+    libraryTarget = 'umd'
+}
 
 //生成环境配置
 const buildConfig = {
@@ -81,10 +88,10 @@ const buildConfig = {
             ...entryAll,
         },
         output: {
-            filename: '[name].js',
+            filename: VUE_APP === 'common' ? 'wzw-ui.common.js' : '[name].js',
             library: 'wzw',
             libraryExport: 'default',
-            libraryTarget: process.env.VUE_APP_SECRET === 'index' ? 'umd' : 'commonjs2',
+            libraryTarget: libraryTarget,
         },
         resolve: {
           extensions: ['.js', '.vue', '.json'],

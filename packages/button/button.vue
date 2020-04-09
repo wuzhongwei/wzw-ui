@@ -80,5 +80,5 @@ export default {
 }
 </script>
 <style lang="scss">
-@import "styles/button.scss";
+// @import "styles/button.scss";
 </style>
