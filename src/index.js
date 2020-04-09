@@ -34,7 +34,7 @@ const install = (Vue) => {
   // Vue.component(Main.name, Main)
   // Vue.component(Input.name, Input)
 }
-if (window.Vue) {
+if (typeof window !== 'undefined' && window.Vue) {
   install(Vue)
 }
 
