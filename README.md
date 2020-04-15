@@ -13,7 +13,7 @@ Vue.use(WzwUi)
 ```
 
 ## 按需加载 
-- 首先，安装 babel-plugin-component：
+- 首先，安装 babel-plugin-component：  
 npm install babel-plugin-component -D
 ```js
 // .babelrc or babel-loader option
